@@ -1,24 +1,17 @@
-import logo from './logo.svg';
 import './App.css';
+import {Game} from './components/Game.js'
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+      {/* <header className="App-header"> */}
+      <header>
         <p>
-          Edit <code>src/App.js</code> and save to reload.
+          This app is for training speed and precision in keyboard typing
         </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
       </header>
-    </div>
+      <Game />
+      </div>
   );
 }
 

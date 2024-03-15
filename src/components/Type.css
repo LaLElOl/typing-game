@@ -1,0 +1,24 @@
+.inputGood {
+    width: 500px; /* Ancho del input */
+    height: 100px;
+    padding: 10px; /* Espacio interno del input */
+    font-family: Arial, sans-serif; /* Fuente del texto */
+    font-size: 16px; /* Tamaño de la fuente */
+    line-height: 1.5; /* Espaciado entre líneas */
+    border: 1px solid #ccc; /* Borde del input */
+    border-radius: 5px; /* Radio de borde */
+    align-items: start;
+  }
+
+.inputWrong {
+  width: 500px; /* Ancho del input */
+  height: 100px;
+  padding: 10px; /* Espacio interno del input */
+  font-family: Arial, sans-serif; /* Fuente del texto */
+  font-size: 16px; /* Tamaño de la fuente */
+  line-height: 1.5; /* Espaciado entre líneas */
+  border: 1px solid #ccc; /* Borde del input */
+  border-radius: 5px; /* Radio de borde */
+  align-items: start;
+  background-color: salmon;
+}
