@@ -8,6 +8,7 @@ export function Type(props){
     const [inputStyle, setInputStyle] = useState('inputGood');
     const [finished, setFinished] = useState(false);
     const sentence = props.sentence;
+    const wordsCount = sentence.split(' ').length;
     
     if(!finished){
         return (
@@ -30,7 +31,7 @@ export function Type(props){
     }else{
     return (
         <div>
-            <Stopwatch typedLength={typed.length} finished={finished}/>
+            <Stopwatch typedLength={typed.length} finished={finished} wordsCount={wordsCount}/>
             <br/>
             <p>Completed correctly!</p>
             <br></br>

@@ -8,6 +8,8 @@ export function Stopwatch(props){
     const startTimeRef = useRef(0);
     const wordLength = props.typedLength;
     const finished = props.finished;
+    const wordsCount = props.wordsCount;
+    
 
     useEffect(() => {
         if(isRunning){
@@ -46,10 +48,23 @@ export function Stopwatch(props){
         return `${minutes}:${seconds}:${miliseconds}`;
     }
 
-    return (
-        <div>
-            {formatTime()}
-        </div>
-    );
+    if(!finished){
+        return (
+            <div>{formatTime()}</div>
+        );
+    }else{
+        return (
+            <div>
+                <div>Your time is: {formatTime()}</div>
+                <br/>
+                <div>Your score is {calculateWPM(wordsCount, elapsedTime)} WPM!</div> 
+            </div>
+        );
+    }
 
+}
+
+function calculateWPM(wordsCount, time){
+    let seconds = time / (1000) % 60;
+    return Math.trunc((wordsCount / seconds) * 60);
 }
