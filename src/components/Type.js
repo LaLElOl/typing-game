@@ -1,5 +1,6 @@
 import {useState} from 'react';
 import './Type.css';
+import { Stopwatch } from './Stopwatch.js';
 
 export function Type(props){
 
@@ -11,21 +12,26 @@ export function Type(props){
     if(!finished){
         return (
             <div>
-            <p>{sentence}</p>
-            <input
-                className={inputStyle}
-                value={typed}
-                onChange={e => {
-                    setTyped(e.target.value);
-                    compareToText(e.target.value, sentence, setInputStyle);
-                    endedTyping(e.target.value, sentence, setFinished);
-                }}
-            />
+                <Stopwatch typedLength={typed.length} finished={finished}/>
+                <br/>
+                <br/>
+                <p>{sentence}</p>
+                <input
+                    className={inputStyle}
+                    value={typed}
+                    onChange={e => {
+                        setTyped(e.target.value);
+                        compareToText(e.target.value, sentence, setInputStyle);
+                        endedTyping(e.target.value, sentence, setFinished);
+                    }}
+                />
             </div>
         );
     }else{
     return (
         <div>
+            <Stopwatch typedLength={typed.length} finished={finished}/>
+            <br/>
             <p>Completed correctly!</p>
             <br></br>
             <br></br>
